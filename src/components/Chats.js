@@ -77,7 +77,7 @@ export default function Chats() {
     <div className='chats-page'>
       <div className='nav-bar'>
         <div className='logo-tab'>
-          Unichat
+          Chatter
         </div>
 
         <div onClick={handleLogout} className='logout-tab'>
