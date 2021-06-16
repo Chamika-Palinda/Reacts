@@ -1,43 +1,33 @@
-import React from "react";
-import {
-  GoogleOutlined,
-  FacebookOutlined,
-  MessageOutlined,
-} from "@ant-design/icons";
-import "firebase/auth";
+import React from "react"
 
-import { auth } from "../firebase";
-import firebase from "firebase";
+import { GoogleOutlined, FacebookOutlined } from '@ant-design/icons'
 
-const Login = () => {
+import firebase from "firebase/app"
+
+import { auth } from "../firebase"
+
+export default function Login() {
   return (
-    <div id="login-page">
-      <div id="login-card">
-        <h2>
-          Welcome to Chatter <MessageOutlined style={{ color: "#096dd9" }} />
-        </h2>
+    <div id='login-page'>
+      <div id='login-card'>
+        <h2>Welcome to Unichat!</h2>
+
         <div
-          className="login-button google"
-          onClick={() =>
-            auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
-          }
+          className='login-button google'
+          onClick={() => auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())}
         >
-          <GoogleOutlined />
-          Sign with Google
+          <GoogleOutlined /> Sign In with Google
         </div>
-        <br /> <br />
+
+        <br/><br/>
+
         <div
-          className="login-button facebook"
-          onClick={() =>
-            auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider())
-          }
+          className='login-button facebook'
+          onClick={() => auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider()) }
         >
-          <FacebookOutlined />
-          Sign with Facebook
+          <FacebookOutlined /> Sign In with Facebook
         </div>
       </div>
     </div>
-  );
-};
-
-export default Login;
+  )
+}
